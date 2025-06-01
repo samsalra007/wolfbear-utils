@@ -5,3 +5,6 @@ apk add util-linux zip unzip
 
 echo "Agregando dependencias para compilar QT6"
 apk add build-base cmake qt6-qtbase-dev qt6-qtdeclarative-dev qt6-qtshadertools-dev
+apk add git ninja perl python3 gperf \
+    mesa-dev libxkbcommon-dev wayland-dev libinput-dev \
+    freetype-dev harfbuzz-dev fontconfig-dev
