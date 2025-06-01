@@ -18,6 +18,11 @@ echo "cmake version: "$( cmake --version )
 echo "ninja version: "$( ninja --version)
 sleep 0.5
 
+if [ -d "/opt/qt6.9" ]; then
+    echo "Ya existe una instalación compilada de QT6.9, no es necesario preparar QT"
+    return 0
+fi
+
 if [ -d "$QT_DIR" ]; then
     echo "El repositorio de QT ya existe, por lo que no es necesario volverlo a descargar"
 else 
