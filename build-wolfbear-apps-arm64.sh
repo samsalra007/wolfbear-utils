@@ -13,11 +13,13 @@ echo "wolfbear-utils dir: '$WOLFBEAR_UTILS_DIR'"
 echo "wolfbear-apps dir: '$WOLFBEAR_APPS_DIR'"
 echo "qt-arm64 dir: '$QT_ARM64_DIR'"
 echo "sys-apps dir dir: '$WOLFBEAR_SYSAPPS_DIR'"
+sleep 2
 
 mkdir -p $WOLFBEAR_UTILS_DIR/target
 mkdir -p $WOLFBEAR_APPS_DIR/build
 
-echo "Abriendo directorio de compilación"
+echo "Abriendo directorio de compilación $WOLFBEAR_APPS_DIR/build"
+sleep 2
 cd $WOLFBEAR_APPS_DIR/build
 
 # Habilitar si no encuentra el compilado por la version QtQml
@@ -27,10 +29,13 @@ cd $WOLFBEAR_APPS_DIR/build
 # doas ln -s /usr/include/qt6/QtCore /usr/include/qt6/QtCore/6.8.2/QtCore
 
 echo "Compilando Launcher en $WOLFBEAR_APPS_DIR/Launcher"
+sleep 2
+
 cmake $WOLFBEAR_APPS_DIR/Launcher -DCMAKE_PREFIX_PATH=$QT_ARM64_DIR
 make -j$(nproc)
 
 echo "Eliminando antigua aplicación de Launcher"
+sleep 2
 
 rm -rf $WOLFBEAR_APPS_DIR/apps/wolfbear-apps/LauncherApp.d
 mkdir -p $WOLFBEAR_APPS_DIR/apps/wolfbear-apps/LauncherApp.d
@@ -38,9 +43,14 @@ mkdir -p $WOLFBEAR_APPS_DIR/apps/wolfbear-apps/LauncherApp.d
 rm -f $WOLFBEAR_APPS_DIR/apps/wolfbear-apps/LauncherApp.zip
 
 echo "Accediendo al directorio $WOLFBEAR_APPS_DIR/build"
+sleep 2
 cd $WOLFBEAR_APPS_DIR/build
 
 echo "Comprimiendo el directorio $( pwd ) hacia $WOLFBEAR_APPS_DIR/apps/wolfbear-apps/LauncherApp"
+sleep 2
 zip -r $WOLFBEAR_APPS_DIR/apps/wolfbear-apps/LauncherApp .
+
+echo "Desempaquetando en sys-apps"
+sleep 2
 
 unzip $WOLFBEAR_APPS_DIR/apps/wolfbear-apps/LauncherApp.zip -d $WOLFBEAR_APPS_DIR/apps/wolfbear-apps/LauncherApp.d
