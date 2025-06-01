@@ -6,6 +6,8 @@ WOLFBEAR_APPS_DIR=$( dirname "$(pwd)" )/wolfbear-apps
 QT_ARM64_DIR="/usr/lib/qt6"
 COMPILE_STRATEGY="musl"
 
+export QML2_IMPORT_PATH=/usr/lib/qt6/qml
+
 # if [ "$COMPILE_STRATEGY" = 'musl' ]; then
 #     include_directories("/usr/include/qt6/QtQml")
 # fi
