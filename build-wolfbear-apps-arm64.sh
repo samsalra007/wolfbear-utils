@@ -6,7 +6,7 @@ WOLFBEAR_APPS_DIR=$( dirname "$(pwd)" )/wolfbear-apps
 QT_ARM64_DIR=/home/wolfbear/Qt/6.9.0/gcc_arm64
 COMPILE_STRATEGY="musl"
 
-if [ "$COMPILE_STRATEGY" = 'musl']; then
+if [ "$COMPILE_STRATEGY" = 'musl' ]; then
     include_directories("/usr/include/qt6/QtQml")
 fi
 
