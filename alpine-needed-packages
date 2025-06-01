@@ -25,4 +25,5 @@ mkdir -p $WOLFBEAR_APPS_DIR/dependencies/qt5
 git clone https://github.com/qt/qt5.git -b v6.9.0 --recursive $WOLFBEAR_APPS_DIR/dependencies/qt5
 cd $WOLFBEAR_APPS_DIR/dependencies/qt5
 
-./init-repository --module-subset=qtbase,qtdeclarative,qtshadertools,qtquickcontrols2,qttools
+./init-repository --module-subset=qtbase,qtdeclarative,qtshadertools,qtquickcontrols2,qttools,qtqmlcompilerplus
+
