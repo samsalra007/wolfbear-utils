@@ -18,6 +18,8 @@ echo "ninja version: "$( ninja --version)
 sleep 0.5
 
 echo "Clonando QT 6.9.0 de su repositorio oficial"
+
+rm -rf $WOLFBEAR_APPS_DIR/dependencies/qt5
 mkdir -p $WOLFBEAR_APPS_DIR/dependencies/qt5
 
 git clone https://github.com/qt/qt5.git -b v6.9.0 --recursive $WOLFBEAR_APPS_DIR/dependencies/qt5
