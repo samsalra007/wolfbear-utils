@@ -1,4 +1,7 @@
 #! /bin/sh
 
+echo "Agregando dependencias de Linux"
+apk add util-linux zip unzip
+
 echo "Agregando dependencias para compilar QT6"
 apk add build-base cmake qt6-qtbase-dev qt6-qtdeclarative-dev qt6-qtshadertools-dev
