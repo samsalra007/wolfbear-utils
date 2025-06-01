@@ -1,0 +1,20 @@
+#!/bin/sh
+
+WOLFBEAR_UTILS_DIR=$( pwd )
+WOLFBEAR_APPS_DIR=$( dirname "$(pwd)" )/wolfbear-apps
+
+QT_ARM64_DIR=/home/wolfbear/Qt/6.9.0/gcc_arm64
+
+echo "Construyendo wolfbear-apps para ARM64"
+echo "wolfbear-utils dir: '$WOLFBEAR_UTILS_DIR'"
+echo "wolfbear-apps dir: '$WOLFBEAR_APPS_DIR'"
+
+mkdir -p $WOLFBEAR_UTILS_DIR/build
+mkdir -p $WOLFBEAR_APPS_DIR/target
+
+cd $WOLFBEAR_UTILS_DIR/build
+
+cmake $WOLFBEAR_APPS_DIR/Launcher -DCMAKE_PREFIX_PATH=$QT_ARM64_DIR
+make -j$(nproc)
+
+zip -r $WOLFBEAR_UTILS_DIR/target/LauncherApp $WOLFBEAR_APPS_DIR/build
