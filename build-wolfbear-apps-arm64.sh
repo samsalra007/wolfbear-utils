@@ -53,4 +53,4 @@ zip -r $WOLFBEAR_SYSAPPS_DIR/apps/wolfbear-apps/LauncherApp .
 echo "Desempaquetando en sys-apps"
 sleep 2
 
-unzip $WOLFBEAR_APPS_DIR/apps/wolfbear-apps/LauncherApp.zip -d $WOLFBEAR_SYSAPPS_DIR/apps/wolfbear-apps/LauncherApp.d
+unzip $WOLFBEAR_SYSAPPS_DIR/apps/wolfbear-apps/LauncherApp.zip -d $WOLFBEAR_SYSAPPS_DIR/apps/wolfbear-apps/LauncherApp.d
