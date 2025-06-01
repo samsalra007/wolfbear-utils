@@ -2,6 +2,7 @@
 set -euo pipefail
 
 WOLFBEAR_APPS_DIR=$( dirname "$(pwd)" )/wolfbear-apps
+QT_DIR=$WOLFBEAR_APPS_DIR/dependencies/qt5
 
 echo "Agregando dependencias de Linux"
 apk add util-linux zip unzip
@@ -17,13 +18,17 @@ echo "cmake version: "$( cmake --version )
 echo "ninja version: "$( ninja --version)
 sleep 0.5
 
-echo "Clonando QT 6.9.0 de su repositorio oficial"
+if [ -d "$QT_DIR" ]; then
+    echo "El repositorio ya existe"
+else 
+    echo "Clonando QT 6.9.0 de su repositorio oficial"
 
-rm -rf $WOLFBEAR_APPS_DIR/dependencies/qt5
-mkdir -p $WOLFBEAR_APPS_DIR/dependencies/qt5
+    mkdir -p $QT_DIR
 
-git clone https://github.com/qt/qt5.git -b v6.9.0 --recursive $WOLFBEAR_APPS_DIR/dependencies/qt5
-cd $WOLFBEAR_APPS_DIR/dependencies/qt5
+    git clone https://github.com/qt/qt5.git -b v6.9.0 --recursive $QT_DIR
+    cd $QT_DIR
 
-./init-repository --module-subset=qtbase,qtdeclarative,qtshadertools,qtquickcontrols2,qttools,qtqmlcompilerplus
+    ./init-repository --module-subset=qtbase,qtdeclarative,qtshadertools,qtquickcontrols2,qttools
+
+fi
 
