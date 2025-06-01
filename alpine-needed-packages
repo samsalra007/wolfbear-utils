@@ -1,4 +1,4 @@
 #! /bin/sh
 
-doas echo "Agregando dependencias para compilar QT6"
+echo "Agregando dependencias para compilar QT6"
 apk add build-base cmake qt6-qtbase-dev qt6-qtdeclarative-dev qt6-qtshadertools-dev
