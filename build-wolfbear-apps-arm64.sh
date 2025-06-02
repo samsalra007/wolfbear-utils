@@ -18,15 +18,17 @@ sleep 2
 mkdir -p $WOLFBEAR_UTILS_DIR/target
 mkdir -p $WOLFBEAR_APPS_DIR/build
 
-echo "Obteniendo los ultimos cambios"
-sleep 1
-cd $WOLFBEAR_APPS_DIR
-git pull origin main
-
 echo "Eliminando compilación anterior"
 sleep 1
+
 rm -rf $WOLFBEAR_APPS_DIR/build
 mkdir -p rm -rf $WOLFBEAR_APPS_DIR/build
+
+echo "Obteniendo los ultimos cambios"
+sleep 1
+
+cd $WOLFBEAR_APPS_DIR
+git pull origin main
 
 echo "Abriendo directorio de compilación $WOLFBEAR_APPS_DIR/build"
 sleep 2
