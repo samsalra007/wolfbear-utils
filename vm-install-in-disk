@@ -17,8 +17,8 @@ echo "Ejecutando QEMU"
 qemu-system-aarch64 \
   -machine virt \
   -cpu cortex-a72 \
-  -m 2048 \
-  -smp cpus=2 \
+  -m 3196 \
+  -smp cpus=3 \
   -bios EFI/QEMU_EFI.fd \
   -drive file=target/generated.img,if=virtio,format=raw \
   -drive file=target/disk.qcow2,if=virtio,format=qcow2,cache=writeback \

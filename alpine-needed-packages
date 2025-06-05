@@ -1,10 +1,6 @@
 #! /bin/sh
 set -euo pipefail
 
-WOLFBEAR_APPS_DIR=$( dirname "$(pwd)" )/wolfbear-apps
-WOLFBEAR_TOOLS_DIR=$( dirname "$(pwd)" )/wolfbear-tools
-QT_DIR=$WOLFBEAR_TOOLS_DIR/dependencies/qt5
-
 echo "Agregando dependencias de Linux"
 apk add util-linux zip unzip
 

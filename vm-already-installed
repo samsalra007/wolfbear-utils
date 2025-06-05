@@ -5,14 +5,13 @@ echo "Ejecutando QEMU desde disco virtual con WolfbearOS ya instalado"
 qemu-system-aarch64 \
   -machine virt \
   -cpu cortex-a72 \
-  -m 2048 \
-  -smp cpus=2 \
+  -m 3096 \
+  -smp cpus=3 \
   -bios EFI/QEMU_EFI.fd \
   -drive file=target/disk.qcow2,if=virtio,format=qcow2,cache=writeback \
   -netdev user,id=net0 \
   -device virtio-net-device,netdev=net0 \
-  -device virtio-gpu-pci \
-  -display cocoa \
+  -device virtio-gpu-pci,xres=1920,yres=1080 \
+  -display vnc=:0 \
   -serial stdio \
-  -boot order=c \
-  -append "console=ttyAMA0 video=virtio-drmfb:1920x1080"
+  -boot order=c
