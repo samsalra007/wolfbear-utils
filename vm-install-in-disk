@@ -24,6 +24,4 @@ qemu-system-aarch64 \
   -drive file=target/disk.qcow2,if=virtio,format=qcow2,cache=writeback \
   -netdev user,id=net0 \
   -device virtio-net-device,netdev=net0 \
-  -device virtio-gpu-pci \
-  -display cocoa \
   -serial stdio
