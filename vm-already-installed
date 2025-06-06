@@ -12,6 +12,8 @@ qemu-system-aarch64 \
   -netdev user,id=net0 \
   -device virtio-net-device,netdev=net0 \
   -device virtio-gpu-pci,xres=1920,yres=1080 \
-  -display vnc=:0 \
+  -display cocoa \
+  -device qemu-xhci \
+  -device usb-tablet \
   -serial stdio \
   -boot order=c
