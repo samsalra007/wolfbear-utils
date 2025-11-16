@@ -35,6 +35,7 @@ for WOLFBEAR_ARCH in $WOLFBEAR_ARCHES; do
 	rm -rf "$APK_OUTPUT_SNAPSHOTS"
 	mkdir -p "$APK_OUTPUT_SNAPSHOTS"
 
+    echo "Descargando dependencias APK"
 	apk fetch \
         --no-cache \
         --cache-dir /dev/null \
@@ -46,6 +47,14 @@ for WOLFBEAR_ARCH in $WOLFBEAR_ARCHES; do
         --output "$APK_OUTPUT_SNAPSHOTS" \
         --recursive \
         $WOLFBEAR_PACKAGES
+
+    echo "Generando indices"
+    (
+        cd "$APK_OUTPUT_SNAPSHOTS"
+        rm -f APKINDEX.tar.gz
+        apk index -o APKINDEX.tar.gz
+        ls -lh APKINDEX.tar.gz
+    )
 
 done
 
