@@ -4,20 +4,27 @@ set -euo pipefail
 source ./globals
 
 echo "Aplicando parches correspondientes a Linux Kernel"
-cd $DEPENDENCY_LINUX_DIR
 
 if patch --dry-run --forward -p1 < $LINUX_PATCHES_DIR/000-linux-uts-name.patch > /dev/null; then
+
  	echo "Se encontró que el parche 000-linux-uts-name.patch no ha sido aplicado"
-	patch -p1 < $LINUX_PATCHES_DIR/000-linux-uts-name.patch
+	
+	patch -d "$DEPENDENCY_LINUX_DIR" -p1 < "$LINUX_PATCHES_DIR/000-linux-uts-name.patch"
+	
 	echo "Parche 000-linux-uts-name.patch aplicado"
+
 else
 	echo "El parche 000-linux-uts-name.patch ya estaba previamente aplicado"
 fi
 
 if patch --dry-run --forward -p1 < $LINUX_PATCHES_DIR/001-linux-blk-iocost-c-unsigned-int-format.patch > /dev/null; then
+
 	echo "Se encontró que el parche 001-linux-blk-iocost-c-unsigned-int-format.patch no ha sido aplicado"
-	patch -p1 < $LINUX_PATCHES_DIR/001-linux-blk-iocost-c-unsigned-int-format.patch
+	
+	patch -d "$DEPENDENCY_LINUX_DIR" -p1 < "$LINUX_PATCHES_DIR/001-linux-blk-iocost-c-unsigned-int-format.patch"
+
 	echo "Parche 001-linux-blk-iocost-c-unsigned-int-format.patch aplicado"
+
 else
 	echo "El parche 001-linux-blk-iocost-c-unsigned-int-format.patch ya estaba previamente aplicado"
 fi
