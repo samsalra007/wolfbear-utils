@@ -4,6 +4,9 @@ set -euo pipefail
 WOLFBEAR_VERSION="1.0"
 WOLFBEAR_ARCHES="aarch64 x86_64"
 
+WOLFBEAR_REPO_CERT="./certs/wolfbear-repo.pem"
+WOLFBEAR_REPO_WWW="/scratch/www/os.wolfbear.mx/public/$WOLFBEAR_VERSION"
+
 WOLFBEAR_PACKAGES="
 apk-tools
 shadow  
@@ -45,3 +48,10 @@ for WOLFBEAR_ARCH in $WOLFBEAR_ARCHES; do
         $WOLFBEAR_PACKAGES
 
 done
+
+cd ./output/snapshots/
+
+WOLFBEAR_SNAPSHOT_ZIP_FILE="$WOLFBEAR_VERSION.zip"
+
+rm -f "$WOLFBEAR_SNAPSHOT_ZIP_FILE"
+zip -r "WOLFBEAR_SNAPSHOT_ZIP_FILE" "$WOLFBEAR_VERSION/" 
