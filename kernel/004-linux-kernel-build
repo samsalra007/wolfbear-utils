@@ -1,0 +1,15 @@
+#!/bin/sh
+set -euo pipefail
+
+source ./globals
+
+echo "Iniciando compilación de Linux Kernel"
+
+echo "Accediendo al directorio '$DEPENDENCY_LINUX_DIR'"
+cd $DEPENDENCY_LINUX_DIR
+
+echo "Compilando kernel"
+
+make -j$(nproc)
+
+echo "Compilación realizada exitosamente"

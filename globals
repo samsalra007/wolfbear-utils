@@ -13,7 +13,9 @@ export BUSY_BOX_VERSION=1.37.0
 export QT_VERSION=6.9.1
 
 export OUTPUT_PATH="./output"
+
 export DEPENDENCY_LINUX_DIR="$OUTPUT_PATH/linux"
+export DEPENDENCIES_LINUX_MODULES_DIR="$DEPENDENCY_LINUX_DIR./linux-modules"
 
 export LINUX_PATCHES_DIR="./kernel/patches"
 export LINUX_CONFIGS_PATH="./kernel/config"

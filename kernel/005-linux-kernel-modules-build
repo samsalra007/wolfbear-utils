@@ -1,0 +1,22 @@
+#!/bin/sh
+set -euo pipefail
+
+source ./globals
+
+echo "Iniciando compilación de Módulos Linux Kernel"
+
+echo "Accediendo al directorio '$DEPENDENCY_LINUX_DIR'"
+cd $DEPENDENCY_LINUX_DIR
+
+echo "Solicitando compilación de módulos"
+make -j$(nproc) modules
+
+echo "Limpiando módulos anteriores en '$DEPENDENCIES_LINUX_MODULES_DIR'"
+
+rm -rf $DEPENDENCIES_LINUX_MODULES_DIR
+mkdir -p $DEPENDENCIES_LINUX_MODULES_DIR
+
+echo "Compilando módulos en '$DEPENDENCIES_LINUX_MODULES_DIR'"
+make -j$(nproc) modules_install INSTALL_MOD_PATH=$DEPENDENCIES_LINUX_MODULES_DIR
+
+echo "Compilación realizada exitosamente"
