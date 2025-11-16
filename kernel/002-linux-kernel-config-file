@@ -15,4 +15,4 @@ CONFIG_IN_LINUX_DIR="$DEPENDENCY_LINUX_DIR/.config"
 echo "Copiando archivo de configuración desde '$CONFIG_IN_PROJECT' hasta '$CONFIG_IN_LINUX_DIR'" 1
 cp $CONFIG_IN_PROJECT $CONFIG_IN_LINUX_DIR
 
-log_message $SCRIPT_NAME "Archivo de configuración sincronizado exitosamente en '$DEPENDENCY_LINUX_DIR'"
+echo "Archivo de configuración sincronizado exitosamente en '$DEPENDENCY_LINUX_DIR'"
