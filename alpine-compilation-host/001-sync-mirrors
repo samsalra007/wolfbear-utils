@@ -58,4 +58,4 @@ zip -r "$WOLFBEAR_SNAPSHOT_ZIP_FILE" "$WOLFBEAR_VERSION/"
 
 cd ../../
 
-scp -i ./certs/wolfbear-repo.pem "./output/snapsohts/$WOLFBEAR_SNAPSHOT_ZIP_FILE" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW"
+scp -i ./certs/wolfbear-repo.pem "./output/snapshots/$WOLFBEAR_SNAPSHOT_ZIP_FILE" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW"
