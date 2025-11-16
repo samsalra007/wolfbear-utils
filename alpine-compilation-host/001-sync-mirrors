@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 set -euo pipefail
 
 WOLFBEAR_VERSION="1.0"
