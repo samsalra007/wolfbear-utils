@@ -1,6 +1,8 @@
 #!/bin/sh
 set -euo pipefail
 
+./globals
+
 echo "Iniciando descarga del kernel de linux '$DEPENDENCY_LINUX_DIR'"
 
 if [ ! -d "$DEPENDENCY_LINUX_DIR" ] || [ -z "$(ls -A "$DEPENDENCY_LINUX_DIR")" ]; then
