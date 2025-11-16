@@ -29,15 +29,17 @@ for WOLFBEAR_ARCH in $WOLFBEAR_ARCHES; do
 	APK_OUTPUT_SNAPSHOTS="./output/snapshots/"$WOLFBEAR_VERSION"/"$WOLFBEAR_ARCH"/mirrors"
 
 	echo "Limpiando mirrors anteriores en $APK_OUTPUT_SNAPSHOTS"
-	rm -rf $APK_OUTPUT_SNAPSHOTS
-	mkdir -p $APK_OUTPUT_SNAPSHOTS
+	rm -rf "$APK_OUTPUT_SNAPSHOTS"
+	mkdir -p "$APK_OUTPUT_SNAPSHOTS"
 
 	apk fetch \
-	--arch $WOLFBEAR_ARCH \
-	--recursive \
-	--repository "$ALPINE_MAIN_REPO" \
-	--repository "$ALPINE_COMMUNITY_REPO" \
-	--output "$APK_OUTPUT_SNAPSHOTS" \
-  	$WOLFBEAR_PACKAGES
+        --no-cache \
+        --cache-dir /dev/null \
+        --arch "$WOLFBEAR_ARCH" \
+        --repository "$ALPINE_MAIN_REPO" \
+        --repository "$ALPINE_COMMUNITY_REPO" \
+        --output "$APK_OUTPUT_SNAPSHOTS" \
+        --recursive \
+        $WOLFBEAR_PACKAGES
 
 done
