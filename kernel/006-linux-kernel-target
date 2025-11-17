@@ -1,0 +1,24 @@
+#!/bin/sh
+set -euo pipefail
+
+source ./globals
+
+echo "Moviendo compilado de imágenes de Linux Kernel a '$COMPILED_LINUX'"
+
+if [ "$SYS_ARCH" = "arm64" ]; then
+  SRC_ARCH=arm64
+  IMG=Image
+elif [ "$SYS_ARCH" = "amd64" ] || [ "$SYS_ARCH" = "x86_64" ]; then
+  SRC_ARCH=x86
+  IMG=bzImage
+else
+  echo "Arquitectura desconocida '$SYS_ARCH'"
+  exit 1
+fi
+
+IMAGE_DIR="$DEPENDENCY_LINUX_DIR/arch/$SRC_ARCH/boot/$IMG"
+
+echo "Se moverá el archivo '$IMAGE_DIR' hacia el directorio '$COMPILED_LINUX'"
+mv $IMAGE_DIR $TARGET_DIR
+
+echo "Se han movido los archivos compilados de Linux Kernel exitosamente"

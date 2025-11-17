@@ -20,5 +20,7 @@ export KERNEL_PATH="$ROOT_PATH/kernel"
 export DEPENDENCY_LINUX_DIR="$OUTPUT_PATH/linux"
 export DEPENDENCIES_LINUX_MODULES_DIR="$OUTPUT_PATH/linux-modules"
 
+export COMPILED_LINUX="$OUTPUT_PATH/compiled/kernel"
+
 export LINUX_PATCHES_DIR="$KERNEL_PATH/patches"
 export LINUX_CONFIGS_PATH="$KERNEL_PATH/config"
