@@ -27,6 +27,8 @@ if [ ! -d "$BUSYBOX_SOURCE_CODE_DIR" ] || [ -z "$(ls -A "$BUSYBOX_SOURCE_CODE_DI
 	tar -xjf "busybox-$BUSY_BOX_VERSION.tar.bz2"
     mv "busybox-$BUSY_BOX_VERSION" busybox
 
+    rm "busybox-$BUSY_BOX_VERSION.tar.bz2"
+
 	echo "Busybox ha sido descargado exitosamente"
     sleep 0.2
 else 
