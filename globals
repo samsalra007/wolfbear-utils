@@ -26,7 +26,7 @@ export BUSYBOX_PATH="$ROOT_PATH/busybox"
 
 export SOURCE_CODE_DIR="$OUTPUT_PATH/source-code"
 export LINUX_SOURCE_CODE_DIR="$OUTPUT_PATH/source-code/linux"
-export BUSYBOX_SOURCE_CODE_DIR="$OUTPUT_PATH/source-code/busybox"
+export BUSYBOX_SOURCE_CODE_DIR="$OUTPUT_PATH/source-code/busybox-$BUSY_BOX_VERSION"
 
 export COMPILED_DIR="$OUTPUT_PATH/compiled"
 export LINUX_COMPILED_DIR="$OUTPUT_PATH/compiled/linux"
