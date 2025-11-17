@@ -5,13 +5,13 @@ source ./globals
 cd $ROOT_PATH
 
 if [ "$SYS_ARCH" = 'arm64' ]; then
-    if [ -f "$BUSYBOX_COMPILED_DIR/busybox.zip" ]; then
-        scp -i "$WOLFBEAR_REPO_CERT" "$BUSYBOX_COMPILED_DIR/busybox.zip" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/aarch64/kernel/busybox_aarch64.zip"
+    if [ -f "$LINUX_MODULES_COMPILED_DIR/linux-modules.zip" ]; then
+        scp -i "$WOLFBEAR_REPO_CERT" "$LINUX_MODULES_COMPILED_DIR/linux-modules.zip" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/aarch64/kernel/wolfbear-modules_aarch64.zip"
     fi
 fi
 
 if [ "$SYS_ARCH" = 'amd64' ]; then
-    if [ -f "$BUSYBOX_COMPILED_DIR/busybox.zip" ]; then
-        scp -i "$WOLFBEAR_REPO_CERT" "$BUSYBOX_COMPILED_DIR/busybox.zip" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/x86_64/kernel/busybox_x86_64.zip"
+    if [ -f "$LINUX_MODULES_COMPILED_DIR/linux-modules.zip" ]; then
+        scp -i "$WOLFBEAR_REPO_CERT" "$LINUX_MODULES_COMPILED_DIR/linux-modules.zip" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/x86_64/kernel/wolfbear-modules_x86_64.zip"
     fi
 fi
