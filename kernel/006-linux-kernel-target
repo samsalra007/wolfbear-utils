@@ -19,6 +19,6 @@ fi
 IMAGE_DIR="$DEPENDENCY_LINUX_DIR/arch/$SRC_ARCH/boot/$IMG"
 
 echo "Se moverá el archivo '$IMAGE_DIR' hacia el directorio '$COMPILED_LINUX'"
-mv $IMAGE_DIR $TARGET_DIR
+mv $IMAGE_DIR $COMPILED_LINUX
 
 echo "Se han movido los archivos compilados de Linux Kernel exitosamente"
