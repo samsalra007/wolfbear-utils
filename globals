@@ -13,7 +13,7 @@ export ROOT_PATH=$( pwd )
 
 export WOLFBEAR_VERSION="1.0"
 export WOLFBEAR_REPO_CERT="$ROOT_PATH/certs/wolfbear-repo.pem"
-export WOLFBEAR_REPO_WWW="/scratch/www/os.wolfbear.mx/public/"
+export WOLFBEAR_REPO_WWW="/scratch/www/os.wolfbear.mx/public"
 export WOLFBEAR_SNAPSHOT_ZIP_FILE="$WOLFBEAR_VERSION.zip"
 
 export VERSION_LINUX_KERNEL=6.15
