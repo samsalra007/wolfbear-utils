@@ -30,4 +30,6 @@ ssh -i "$WOLFBEAR_REPO_CERT" wolfbear@wolfbear.mx <<ENDSSH
 
     echo "Contenido DESPUÉS:"
     ls -R "$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION" || true
+
+    rm -f "$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION.zip"
 ENDSSH
