@@ -5,10 +5,21 @@ source ./globals
 echo "Limpiando para $WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION"
 
 ssh -i "$WOLFBEAR_REPO_CERT" wolfbear@wolfbear.mx <<ENDSSH
+    set -eux
 
+    echo "Usuario remoto:"
+    whoami
+
+    echo "Intentando entrar a: $WOLFBEAR_REPO_WWW"
     cd "$WOLFBEAR_REPO_WWW"
+
+    echo "Contenido ANTES:"
+    ls -la
+
+    echo "Eliminando versión: $WOLFBEAR_VERSION"
     rm -rf "$WOLFBEAR_VERSION"
-    
+
+    echo "Creando estructura para \$WOLFBEAR_VERSION=$WOLFBEAR_VERSION"
     mkdir -p "$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/aarch64/apk"
     mkdir -p "$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/aarch64/kernel"
     mkdir -p "$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/aarch64/platforms"
@@ -17,4 +28,6 @@ ssh -i "$WOLFBEAR_REPO_CERT" wolfbear@wolfbear.mx <<ENDSSH
     mkdir -p "$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/x86_64/kernel"
     mkdir -p "$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/x86_64/platforms"
 
+    echo "Contenido DESPUÉS:"
+    ls -R "$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION" || true
 ENDSSH
