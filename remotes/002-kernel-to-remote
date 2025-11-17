@@ -4,10 +4,10 @@ source ./globals
 
 cd $ROOT_PATH
 
-if [ -f "$COMPILED_LINUX_PATH/bzImage" ]; then
-    scp -i "$WOLFBEAR_REPO_CERT" "$COMPILED_LINUX_PATH/bzImage" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/x86_64/kernel/wolfbear-kernel_x86_64"
+if [ -f "$LINUX_COMPILED_DIR/bzImage" ]; then
+    scp -i "$WOLFBEAR_REPO_CERT" "$LINUX_COMPILED_DIR/bzImage" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/x86_64/kernel/wolfbear-kernel_x86_64"
 fi
 
-if [ -f "$COMPILED_LINUX_PATH/Image" ]; then
-    scp -i "$WOLFBEAR_REPO_CERT" "$COMPILED_LINUX_PATH/Image" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/aarch64/kernel/wolfbear-kernel_aarch64"
+if [ -f "$LINUX_COMPILED_DIR/Image" ]; then
+    scp -i "$WOLFBEAR_REPO_CERT" "$LINUX_COMPILED_DIR/Image" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/aarch64/kernel/wolfbear-kernel_aarch64"
 fi

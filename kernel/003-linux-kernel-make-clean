@@ -6,7 +6,7 @@ source ./globals
 echo "El usuario solicitó limpiar la compilación de Linx Kernel"
 echo "Esto solo se recomienda si es la primera compilación o hiciste cambios significativos a Linux Kernel"
 
-cd $DEPENDENCY_LINUX_DIR
+cd $LINUX_SOURCE_CODE_DIR
 
 echo "Solicitando 'make clean'"
 make clean
