@@ -2,10 +2,10 @@
 
 source ./globals
 
-if [ -f $"$COMPILED_LINUX/bzImage" ]; then
+if [ -f "$COMPILED_LINUX/bzImage" ]; then
     scp -i ./certs/wolfbear-repo.pem "$COMPILED_LINUX/bzImage" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/aarch64/wolfbear-kernel_x86_64"
 fi
 
-if [ -f $"$COMPILED_LINUX/Image" ]; then
+if [ -f "$COMPILED_LINUX/Image" ]; then
     scp -i ./certs/wolfbear-repo.pem "$COMPILED_LINUX/Image" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION/aarch64/wolfbear-kernel_aarch64"
 fi
