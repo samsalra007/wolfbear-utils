@@ -3,6 +3,8 @@ set -euo pipefail
 
 source ./globals
 
+cd "$ROOT_PATH"
+
 echo "Iniciando compilación de Módulos Linux Kernel"
 
 echo "Accediendo al directorio '$DEPENDENCY_LINUX_DIR'"
@@ -21,4 +23,6 @@ make -j$(nproc) modules_install INSTALL_MOD_PATH="$DEPENDENCIES_LINUX_MODULES_DI
 
 echo "Compilación realizada exitosamente"
 
-cd "$ROOT_PATH"
+cd $OUTPUT_PATH
+
+zip linux-modules.zip "$DEPENDENCIES_LINUX_MODULES_DIR/"

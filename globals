@@ -12,8 +12,9 @@ fi
 export ROOT_PATH=$( pwd )
 
 export WOLFBEAR_VERSION="1.0"
-export WOLFBEAR_REPO_CERT="./certs/wolfbear-repo.pem"
+export WOLFBEAR_REPO_CERT="$ROOT_PATH/certs/wolfbear-repo.pem"
 export WOLFBEAR_REPO_WWW="/scratch/www/os.wolfbear.mx/public/"
+export WOLFBEAR_SNAPSHOT_ZIP_FILE="$WOLFBEAR_VERSION.zip"
 
 export VERSION_LINUX_KERNEL=6.15
 export BUSY_BOX_VERSION=1.37.0
@@ -24,6 +25,7 @@ export KERNEL_PATH="$ROOT_PATH/kernel"
 
 export DEPENDENCY_LINUX_DIR="$OUTPUT_PATH/linux"
 export DEPENDENCIES_LINUX_MODULES_DIR="$OUTPUT_PATH/linux-modules"
+
 
 export COMPILED_LINUX="$OUTPUT_PATH/compiled/kernel"
 

@@ -3,7 +3,7 @@ set -euo pipefail
 
 source ./globals
 
-echo "Moviendo compilado de imágenes de Linux Kernel a '$COMPILED_LINUX'"
+echo "Moviendo compilado de imágenes de Linux Kernel a '$COMPILED_LINUX_PATH'"
 
 if [ "$SYS_ARCH" = "arm64" ]; then
   SRC_ARCH=arm64
@@ -18,10 +18,10 @@ fi
 
 IMAGE_DIR="$DEPENDENCY_LINUX_DIR/arch/$SRC_ARCH/boot/$IMG"
 
-rm -rf "$COMPILED_LINUX"
-mkdir -p "$COMPILED_LINUX"
+rm -rf "$COMPILED_LINUX_PATH"
+mkdir -p "$COMPILED_LINUX_PATH"
 
-echo "Se moverá el archivo '$IMAGE_DIR' hacia el directorio '$COMPILED_LINUX'"
-mv $IMAGE_DIR $COMPILED_LINUX
+echo "Se moverá el archivo '$IMAGE_DIR' hacia el directorio '$COMPILED_LINUX_PATH'"
+mv $IMAGE_DIR $COMPILED_LINUX_PATH
 
 echo "Se han movido los archivos compilados de Linux Kernel exitosamente"
