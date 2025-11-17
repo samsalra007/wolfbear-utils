@@ -8,14 +8,17 @@ else
 	SYS_ARCH='amd64'
 fi
 
+export ROOT_PATH=$( pwd )
+
 export VERSION_LINUX_KERNEL=6.15
 export BUSY_BOX_VERSION=1.37.0
 export QT_VERSION=6.9.1
 
-export OUTPUT_PATH="./output"
+export OUTPUT_PATH="$ROOT_PATH/output"
+export KERNEL_PATH="$ROOT_PATH/kernel"
 
 export DEPENDENCY_LINUX_DIR="$OUTPUT_PATH/linux"
 export DEPENDENCIES_LINUX_MODULES_DIR="$OUTPUT_PATH/linux-modules"
 
-export LINUX_PATCHES_DIR="./kernel/patches"
-export LINUX_CONFIGS_PATH="./kernel/config"
+export LINUX_PATCHES_DIR="$KERNEL_PATH/patches"
+export LINUX_CONFIGS_PATH="$KERNEL_PATH/config"

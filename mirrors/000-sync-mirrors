@@ -31,7 +31,7 @@ ALPINE_MAIN_REPO="https://dl-cdn.alpinelinux.org/alpine/v3.22/main"
 ALPINE_COMMUNITY_REPO="https://dl-cdn.alpinelinux.org/alpine/v3.22/community"
 
 for WOLFBEAR_ARCH in $WOLFBEAR_ARCHES; do
-    ARCH_OUTPUTS="./output/snapshots/$WOLFBEAR_VERSION/$WOLFBEAR_ARCH/"
+    ARCH_OUTPUTS=$OUTPUT_PATH"/snapshots/$WOLFBEAR_VERSION/$WOLFBEAR_ARCH/"
     APK_OUTPUT_SNAPSHOTS="$ARCH_OUTPUTS/apk"
 
 	echo "Limpiando mirrors anteriores en $APK_OUTPUT_SNAPSHOTS"
@@ -61,13 +61,13 @@ for WOLFBEAR_ARCH in $WOLFBEAR_ARCHES; do
 
 done
 
-cd ./output/snapshots/
+cd "$OUTPUT_PATH/snapshots/"
 
 WOLFBEAR_SNAPSHOT_ZIP_FILE="$WOLFBEAR_VERSION.zip"
 
 rm -f "$WOLFBEAR_SNAPSHOT_ZIP_FILE"
 zip -r "$WOLFBEAR_SNAPSHOT_ZIP_FILE" "$WOLFBEAR_VERSION/"
 
-cd ../../
+cd $ROOT_PATH
 
-scp -i ./certs/wolfbear-repo.pem "./output/snapshots/$WOLFBEAR_SNAPSHOT_ZIP_FILE" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW"
+scp -i ./certs/wolfbear-repo.pem "$OUTPUT_PATH/snapshots/$WOLFBEAR_SNAPSHOT_ZIP_FILE" wolfbear@wolfbear.mx:"$WOLFBEAR_REPO_WWW"
