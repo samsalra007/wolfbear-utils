@@ -2,7 +2,7 @@
 
 source ./globals
 
-echo "Limpiando  para $WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION"
+echo "Limpiando para $WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION"
 
 ssh -i "$WOLFBEAR_REPO_CERT" -t wolfbear@wolfbear.mx <<ENDSSH
     rm -rf "$WOLFBEAR_REPO_WWW/$WOLFBEAR_VERSION"
