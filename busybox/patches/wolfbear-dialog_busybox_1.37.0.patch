@@ -1,0 +1,33 @@
+--- scripts/kconfig/lxdialog/dialog.h	2023-01-05 09:29:10.000000000 -0600
++++ scripts/kconfig/lxdialog/dialog.h.patched	2025-11-17 14:57:36.283446487 -0600
+@@ -24,10 +24,17 @@
+ #include <ctype.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <stdbool.h>
++#include <stdio.h>
+ 
+ #ifdef __sun__
+ #define CURS_MACROS
+ #endif
++
++#ifndef CURSES_LOC
++# define CURSES_LOC <ncurses.h>
++#endif
++
+ #include CURSES_LOC
+ 
+ /*
+--- scripts/kconfig/lxdialog/check-lxdialog.sh	2023-01-05 09:29:10.000000000 -0600
++++ scripts/kconfig/lxdialog/check-lxdialog.sh.patched	2025-11-17 14:58:14.270178395 -0600
+@@ -1,6 +1,10 @@
+ #!/bin/sh
+ # Check ncurses compatibility
+ 
++# Hack para Alpine/musl: forzar enlazado con ncursesw
++echo "-lncursesw"
++exit 0
++
+ # What library to link
+ ldflags()
+ {

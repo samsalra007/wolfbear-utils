@@ -4,9 +4,9 @@ source ./globals
 
 cd "$BUSYBOX_SOURCE_CODE_DIR"
 
-if patch --dry-run --forward -p1 < $BUSYBOX_PATCHES_DIR/busybox-dialog-ncurses-fix.patch > /dev/null; then
+if patch --dry-run --forward -p1 < $BUSYBOX_PATCHES_DIR/wolfbear-dialog_busybox_1.37.0.patch > /dev/null; then
     echo "Aplicando parches para ncurses fix en Alpine"
-    patch -p1 < $BUSYBOX_PATCHES_DIR/busybox-dialog-ncurses-fix.patch
+    patch -p1 < $BUSYBOX_PATCHES_DIR/wolfbear-dialog_busybox_1.37.0.patch
     echo "El parche fue aplicado exitosamente"
 else 
     echo "El parche ya ha sido aplicado con anterioridad"
