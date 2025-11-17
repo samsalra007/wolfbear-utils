@@ -24,10 +24,11 @@ export OUTPUT_PATH="$ROOT_PATH/output"
 export KERNEL_PATH="$ROOT_PATH/kernel"
 export BUSYBOX_PATH="$ROOT_PATH/busybox"
 
+export SOURCE_CODE_DIR="$OUTPUT_PATH/source-code"
 export LINUX_SOURCE_CODE_DIR="$OUTPUT_PATH/source-code/linux"
 export BUSYBOX_SOURCE_CODE_DIR="$OUTPUT_PATH/source-code/busybox"
 
-export COMPILED_PATH="$OUTPUT_PATH/compiled"
+export COMPILED_DIR="$OUTPUT_PATH/compiled"
 export LINUX_COMPILED_DIR="$OUTPUT_PATH/compiled/linux"
 export LINUX_MODULES_COMPILED_DIR="$OUTPUT_PATH/compiled/linux-modules"
 export BUSYBOX_COMPILED_DIR="$OUTPUT_PATH/compiled/busybox"
